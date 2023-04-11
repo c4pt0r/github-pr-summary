@@ -143,8 +143,8 @@ async fn handler(
     for (_i, commit) in commits.iter().enumerate() {
         let system = "You are an experienced software developer. You will act as a reviewer for GitHub Pull Requests.";
         let co = ChatOptions {
-            // model: ChatModel::GPT4,
-            model: ChatModel::GPT35Turbo,
+            model: ChatModel::GPT4,
+            //model: ChatModel::GPT35Turbo,
             restart: true,
             system_prompt: Some(system),
             retry_times: 3,
@@ -166,8 +166,8 @@ async fn handler(
     if reviews.len() > 1 {
         let system = "You are a helpful assistant and an experienced software developer.";
         let co = ChatOptions {
-            // model: ChatModel::GPT4,
-            model: ChatModel::GPT35Turbo,
+            model: ChatModel::GPT4,
+            //model: ChatModel::GPT35Turbo,
             restart: true,
             system_prompt: Some(system),
             retry_times: 3,
