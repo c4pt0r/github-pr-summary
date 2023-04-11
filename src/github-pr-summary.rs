@@ -172,7 +172,7 @@ async fn handler(
             system_prompt: Some(system),
             retry_times: 3,
         };
-        let question = "Here is a set of summaries for software source code patches. Each summary starts with a ------ line. Please write an overall summary considering all the individual summary. Please present the potential issues and errors first, following by the most important findings, in your summary.\n\n".to_string() + &reviews_text;
+        let question = "Here is a set of summaries for software source code patches. Each summary starts with a ------ line. Please write an overall summary considering all the individual summary. Please present the potential issues and errors first, following by the most important findings, and better version of implementation code (If it is too long, please use pseudo-code), in your summary.\n\n".to_string() + &reviews_text;
         if let Some(r) = chat_completion(openai_key_name, &chat_id, &question, &co) {
             write_error_log!("Got the overall summary");
             resp.push_str(&r.choice);
